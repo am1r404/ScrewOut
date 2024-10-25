@@ -736,6 +736,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: screw (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1813428035}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -764,6 +774,7 @@ GameObject:
   - component: {fileID: 249505837}
   - component: {fileID: 249505836}
   - component: {fileID: 249505835}
+  - component: {fileID: 249505838}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -860,6 +871,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249505833}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &249505838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249505833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447907fd3ae649778610203fbdd0e35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screws:
+  - {fileID: 1050836897}
+  - {fileID: 1684155584}
 --- !u!1 &271378744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1350,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelColor: 3
+  filledHoles: 0
+  holeTransforms: []
+  assignedScrews: []
 --- !u!1 &351423296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,6 +1941,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelColor: 0
+  filledHoles: 0
+  holeTransforms: []
+  assignedScrews: []
 --- !u!1 &439432597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,6 +2120,16 @@ PrefabInstance:
       propertyPath: screwColor
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1921520888}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2172,6 +2214,16 @@ PrefabInstance:
       propertyPath: screwColor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1517151908}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2200,6 +2252,7 @@ GameObject:
   - component: {fileID: 571645649}
   - component: {fileID: 571645648}
   - component: {fileID: 571645647}
+  - component: {fileID: 571645651}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2296,6 +2349,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1433808297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &571645651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571645646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447907fd3ae649778610203fbdd0e35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screws:
+  - {fileID: 708830742}
+  - {fileID: 765392057}
 --- !u!1001 &578494402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2359,6 +2427,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: screw (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 571645651}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2551,6 +2629,16 @@ PrefabInstance:
       propertyPath: screwColor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 571645651}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2567,6 +2655,42 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 681731608}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &708830742 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 578494402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &737524493 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 220502517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &765392057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 681731608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &930730222
 Mesh:
   m_ObjectHideFlags: 0
@@ -2949,6 +3073,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004681059}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1018823040 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 505264895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1050836895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3017,6 +3153,16 @@ PrefabInstance:
       propertyPath: screwColor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 249505838}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3033,6 +3179,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1050836895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1050836897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1050836895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1117375336
 GameObject:
   m_ObjectHideFlags: 0
@@ -3141,6 +3299,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117375336}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1150439444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 479016817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1174765154
 GameObject:
   m_ObjectHideFlags: 0
@@ -3317,6 +3487,16 @@ PrefabInstance:
       propertyPath: screwColor
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1474286236}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3401,6 +3581,16 @@ PrefabInstance:
       propertyPath: screwColor
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1517151908}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3417,6 +3607,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1259811097}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1259811099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1259811097}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1262243722
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,6 +3962,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelColor: 1
+  filledHoles: 0
+  holeTransforms: []
+  assignedScrews: []
 --- !u!1 &1296898456
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,6 +4418,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelColor: 4
+  filledHoles: 0
+  holeTransforms: []
+  assignedScrews: []
 --- !u!1 &1354120630
 GameObject:
   m_ObjectHideFlags: 0
@@ -4556,6 +4764,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelColor: 2
+  filledHoles: 0
+  holeTransforms: []
+  assignedScrews: []
 --- !u!1 &1433808296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4689,6 +4900,16 @@ PrefabInstance:
       propertyPath: screwColor
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1921520888}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4717,6 +4938,7 @@ GameObject:
   - component: {fileID: 1474286235}
   - component: {fileID: 1474286234}
   - component: {fileID: 1474286233}
+  - component: {fileID: 1474286236}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -4813,6 +5035,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474286231}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1474286236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474286231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447907fd3ae649778610203fbdd0e35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screws:
+  - {fileID: 1709718337}
+  - {fileID: 1516574513}
 --- !u!1001 &1483267043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4876,6 +5113,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: screw (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1474286236}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4892,6 +5139,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1483267043}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1516574513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1225911428}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1517151903
 GameObject:
   m_ObjectHideFlags: 0
@@ -4904,6 +5163,7 @@ GameObject:
   - component: {fileID: 1517151907}
   - component: {fileID: 1517151906}
   - component: {fileID: 1517151905}
+  - component: {fileID: 1517151908}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -5000,6 +5260,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517151903}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1517151908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517151903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447907fd3ae649778610203fbdd0e35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screws:
+  - {fileID: 1259811099}
+  - {fileID: 1018823040}
 --- !u!43 &1527719891
 Mesh:
   m_ObjectHideFlags: 0
@@ -5438,6 +5713,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1622507415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1463325251}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1684155582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5506,6 +5793,16 @@ PrefabInstance:
       propertyPath: screwColor
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 249505838}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5522,6 +5819,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1684155582}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1684155584 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1684155582}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1703355253
 Mesh:
   m_ObjectHideFlags: 0
@@ -5687,6 +5996,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1709718337 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1483267043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1760086720
 GameObject:
   m_ObjectHideFlags: 0
@@ -6024,6 +6345,7 @@ GameObject:
   - component: {fileID: 1813428034}
   - component: {fileID: 1813428033}
   - component: {fileID: 1813428032}
+  - component: {fileID: 1813428035}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -6120,6 +6442,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813428030}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1813428035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813428030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447907fd3ae649778610203fbdd0e35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screws:
+  - {fileID: 1940340267}
+  - {fileID: 737524493}
 --- !u!1 &1921520883
 GameObject:
   m_ObjectHideFlags: 0
@@ -6132,6 +6469,7 @@ GameObject:
   - component: {fileID: 1921520887}
   - component: {fileID: 1921520886}
   - component: {fileID: 1921520885}
+  - component: {fileID: 1921520888}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -6228,6 +6566,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921520883}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1921520888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921520883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447907fd3ae649778610203fbdd0e35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screws:
+  - {fileID: 1150439444}
+  - {fileID: 1622507415}
 --- !u!1 &1930997443
 GameObject:
   m_ObjectHideFlags: 0
@@ -6404,6 +6757,16 @@ PrefabInstance:
       propertyPath: screwColor
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: attachedPlanks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+        type: 3}
+      propertyPath: 'attachedPlanks.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1813428035}
     - target: {fileID: 8398733847945692275, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6420,6 +6783,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1940340264}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1940340267 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8168184637395966044, guid: 94fcaff3f4d5be24f934cbd20638cd3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1940340264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1976078309
 GameObject:
   m_ObjectHideFlags: 0

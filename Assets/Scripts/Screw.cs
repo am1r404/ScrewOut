@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -7,19 +8,21 @@ public class Screw : MonoBehaviour
 {
     [Header("Unscrewing Settings")]
     public ScrewColor screwColor;            
-    public float rotationSpeed = 100f;       // Degrees per second
-    public float moveUpSpeed = 1f;           // Units per second
-    public float totalRotation = 720f;       // Total degrees to rotate
-    public float totalMoveUp = 0.2f;         // Total units to move up
+    public float rotationSpeed = 100f;
+    public float moveUpSpeed = 1f;    
+    public float totalRotation = 720f;
+    public float totalMoveUp = 0.2f;  
 
     [Header("Movement to Hole Settings")]
-    public float moveTowardsHoleSpeed = 2f;  // Seconds to move to the hole
+    public float moveTowardsHoleSpeed = 2f;
 
-    // Event to notify when the screw is clicked
     public static event Action<Screw> OnScrewClicked;
 
     private bool isUnscrewing = false;
     private Transform targetHole;
+    
+    public List<Plank> attachedPlanks = new List<Plank>();
+    public bool isUnscrewed = false;
 
     void OnMouseDown()
     {
@@ -71,6 +74,13 @@ public class Screw : MonoBehaviour
         await unscrewSequence.AsyncWaitForCompletion();
 
         isUnscrewing = false;
+        isUnscrewed = true;
+        
+        foreach (var plank in attachedPlanks)
+        {
+            plank.OnScrewUnscrewed(this);
+        }
+        
         SetInitialRotation();
         await MoveToAssignedHoleAsync();
     }
@@ -81,14 +91,13 @@ public class Screw : MonoBehaviour
         {
             return;
         }
-
-        Sequence moveToHoleSequence = DOTween.Sequence();
-
-        moveToHoleSequence.Append(transform.DOMove(targetHole.position, moveTowardsHoleSpeed)
-                                         .SetEase(Ease.Linear));
-
-        await moveToHoleSequence.AsyncWaitForCompletion();
-
         transform.parent = targetHole;
+
+        Tween moveTween = transform.DOLocalMove(Vector3.zero, moveTowardsHoleSpeed)
+            .SetEase(Ease.Linear);
+
+        await moveTween.AsyncWaitForCompletion();
+
+        
     }
 }
