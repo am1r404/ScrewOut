@@ -1,5 +1,4 @@
-﻿// BootstrapState.cs
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
 
 public class BootstrapState : IGameState
@@ -18,10 +17,6 @@ public class BootstrapState : IGameState
     {
         Debug.Log("Entering Bootstrap State");
 
-        // Initialize necessary services here
-        // For example: Analytics, Ads, etc.
-
-        // After initialization, load the Main Menu
         _sceneLoader.LoadSceneAsync("MainMenu", () =>
         {
             _stateMachine.ChangeState(GameState.MainMenu);

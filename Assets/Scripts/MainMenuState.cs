@@ -23,9 +23,4 @@ public class MainMenuState : IGameState
     {
         Debug.Log("Exiting MainMenu State");
     }
-
-    public void StartGame()
-    {
-        _stateMachine.ChangeState(GameState.Gameplay);
-    }
 }

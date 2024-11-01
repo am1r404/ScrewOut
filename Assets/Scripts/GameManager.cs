@@ -1,11 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Zenject;
 
 public class GameManager : MonoBehaviour
 {
+    [Inject]
+    private LevelLoader _levelLoader;
+    
+    [Inject] SceneLoader _sceneLoader;
+    
     [Header("Screw Panels")]
     public List<ScrewPanel> screwPanels;
     public ScrewPanel baseScrewPanel;
@@ -16,19 +23,34 @@ public class GameManager : MonoBehaviour
     private int currentPanelIndex = 0;
     private bool gameOver = false;
 
-    [SerializeField] private Transform coloredPanels;
+    [SerializeField] public Transform coloredPanels;
     private List<UniTask> ongoingScrewAnimations = new List<UniTask>();
     
     private bool isPanelMoving = false;
+    [Inject]
+    DiContainer _container;
+
+    [Inject]
+    private ILevelProgressionService _levelProgressionService; 
 
     void OnEnable()
     {
         Screw.OnScrewClicked += HandleScrewClicked;
+
+        _levelLoader.OnLevelLoaded += HandleLevelLoaded;
+    }
+
+    private void Start()
+    {
+        
+        SetupPanels(_levelLoader.GetCurrentLevelInstance());
     }
 
     void OnDisable()
     {
         Screw.OnScrewClicked -= HandleScrewClicked;
+
+        _levelLoader.OnLevelLoaded -= HandleLevelLoaded;
     }
 
     private void HandleScrewClicked(Screw screw)
@@ -168,6 +190,7 @@ public class GameManager : MonoBehaviour
             if (currentPanelIndex + 1 >= screwPanels.Count && screwPanels[currentPanelIndex].IsFull())
             {
                 Debug.Log("Last panel is filled. Panels will not move.");
+                OnLevelCompleted();
             }
         }
         finally
@@ -175,10 +198,70 @@ public class GameManager : MonoBehaviour
             isPanelMoving = false;
         }
     }
+    
+    public void SetupPanels(GameObject levelInstance)
+    {
+        LevelConfiguration config = levelInstance.GetComponent<LevelConfiguration>();
+        if (config == null)
+        {
+            return;
+        }
+
+        LevelData levelData = config.LevelData;
+        if (levelData == null)
+        {
+            return;
+        }
+
+        int i = 0;
+        screwPanels.Clear();
+
+        foreach (var panelData in levelData.panels)
+        {
+            var panel = _container.InstantiatePrefabForComponent<ScrewPanel>(
+                Resources.Load("ColoredPanel"), 
+                coloredPanels.position, 
+                Quaternion.identity, 
+                coloredPanels);
+
+            panel.transform.localPosition += new Vector3(i * -0.5f, 0, 0);
+            panel.panelColor = panelData.panelColor;
+
+            screwPanels.Add(panel);
+
+            i++;
+        }
+    }
+    
+    public void OnLevelCompleted()
+    {
+        _levelProgressionService.AdvanceToNextLevel();
+    }
 
     private void PlayerLoses()
     {
         gameOver = true;
-        Debug.Log("Game Over! Base ScrewPanel is fully filled.");
     }
+
+    private void HandleLevelLoaded()
+    {
+        foreach (var panel in screwPanels)
+        {
+            if (panel != null)
+            {
+                Destroy(panel.gameObject);
+            }
+        }
+
+        screwPanels.Clear();
+        currentPanelIndex = 0;
+        gameOver = false;
+        SetupPanels(_levelLoader.GetCurrentLevelInstance());
+    }
+
+    private void LoadMainMenu()
+    {
+        _sceneLoader.LoadSceneAsync("MainMenu");
+    }
+
 }
