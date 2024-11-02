@@ -1,23 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public interface ILevelProgressionService
-{
-    int CurrentLevel { get; }
-    UnityEvent OnLevelAdvanced { get; }
-    void LoadCurrentLevel();
-    void AdvanceToNextLevel();
-    void ResetProgress();
-}
 
-public class LevelProgressionService : ILevelProgressionService
+public class LevelProgressionService
 {
     private const string PlayerPrefsCurrentLevelKey = "CurrentLevelIndex";
     private readonly LevelLoader _levelLoader;
-
-    public UnityEvent OnLevelAdvanced { get; } = new UnityEvent();
-
+    public UnityEvent OnLevelAdvanced { get; } = new();
     public int CurrentLevel { get; private set; }
+    public bool justPassedLevel;
 
     public LevelProgressionService(LevelLoader levelLoader)
     {
@@ -32,12 +23,12 @@ public class LevelProgressionService : ILevelProgressionService
 
     public void AdvanceToNextLevel()
     {
+        justPassedLevel = true;
         int nextLevel = CurrentLevel + 1;
         if (nextLevel < _levelLoader.levelPrefabs.Count)
         {
             CurrentLevel = nextLevel;
             SaveProgress();
-            _levelLoader.LoadLevel(CurrentLevel);
             OnLevelAdvanced.Invoke();
         }
         else

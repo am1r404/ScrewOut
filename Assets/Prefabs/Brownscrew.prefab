@@ -76,13 +76,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5f0e2647fdfb14f4ab7f71ffbb8ead2e,
         type: 3}
       propertyPath: m_Name
-      value: screw
+      value: Brownscrew
       objectReference: {fileID: 0}
     - target: {fileID: 7071182760956848314, guid: 5f0e2647fdfb14f4ab7f71ffbb8ead2e,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: f746b39bd94eca544bc79279b4b1e100, type: 2}
+      objectReference: {fileID: 2100000, guid: 045d6ea9dea7d5242b707036f16e7f8e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -114,11 +114,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screwColor: 0
   rotationSpeed: 1000
   moveUpSpeed: 0.2
   totalRotation: 720
   totalMoveUp: 0.1
   moveTowardsHoleSpeed: 0.7
+  attachedPlanks: []
+  isUnscrewed: 0
 --- !u!65 &1973767958870007932
 BoxCollider:
   m_ObjectHideFlags: 0

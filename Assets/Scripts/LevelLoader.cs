@@ -65,9 +65,7 @@ public class LevelLoader
         currentLevelInstance = _container.InstantiatePrefab(levelPrefabs[levelIndex]);
 
         currentLevelIndex = levelIndex;
-
-        PlayerPrefs.SetInt(PlayerPrefsCurrentLevelKey, currentLevelIndex);
-        PlayerPrefs.Save();
+        _sceneLoader.LoadSceneAsync("Game");
 
         OnLevelLoaded?.Invoke();
     }

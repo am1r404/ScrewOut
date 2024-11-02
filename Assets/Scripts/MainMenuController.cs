@@ -7,13 +7,13 @@ using Zenject;
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField] private Button _startGameButton;
-    private ILevelProgressionService _levelProgressionService;
+    private LevelProgressionService _levelProgressionService;
 
     private GameStateMachine _stateMachine;
     [SerializeField] private TextMeshProUGUI textLevel;
 
     [Inject]
-    public void Construct(GameStateMachine stateMachine, ILevelProgressionService levelProgressionService)
+    public void Construct(GameStateMachine stateMachine, LevelProgressionService levelProgressionService)
     {
         _stateMachine = stateMachine;
         _levelProgressionService = levelProgressionService;

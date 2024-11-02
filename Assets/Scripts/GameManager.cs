@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     DiContainer _container;
 
     [Inject]
-    private ILevelProgressionService _levelProgressionService; 
+    private LevelProgressionService _levelProgressionService; 
 
     void OnEnable()
     {
@@ -201,13 +201,8 @@ public class GameManager : MonoBehaviour
     
     public void SetupPanels(GameObject levelInstance)
     {
-        LevelConfiguration config = levelInstance.GetComponent<LevelConfiguration>();
-        if (config == null)
-        {
-            return;
-        }
+        LevelData levelData = Resources.Load("Levels/Data" + (_levelProgressionService.CurrentLevel + 1)) as LevelData;
 
-        LevelData levelData = config.LevelData;
         if (levelData == null)
         {
             return;
@@ -236,6 +231,7 @@ public class GameManager : MonoBehaviour
     public void OnLevelCompleted()
     {
         _levelProgressionService.AdvanceToNextLevel();
+        _sceneLoader.LoadSceneAsync("MainMenu");
     }
 
     private void PlayerLoses()
