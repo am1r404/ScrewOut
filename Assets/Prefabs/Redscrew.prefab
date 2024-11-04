@@ -73,6 +73,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5f0e2647fdfb14f4ab7f71ffbb8ead2e,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0216efb48a3b05a499e9ddf19f381df2, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 5f0e2647fdfb14f4ab7f71ffbb8ead2e,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 524c329f0d826bc4da817b5a99670df8, type: 2}
     - target: {fileID: 919132149155446097, guid: 5f0e2647fdfb14f4ab7f71ffbb8ead2e,
         type: 3}
       propertyPath: m_Name
@@ -114,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0e799f7f8b03349b1d41b5bf8e8067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screwColor: 0
+  screwColor: 1
   rotationSpeed: 1000
   moveUpSpeed: 0.2
   totalRotation: 720

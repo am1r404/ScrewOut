@@ -648,7 +648,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 50
-  damping: 5
+  verticalRotationLimit: 15
+  inertiaDecay: 0.95
 --- !u!1 &4674243508035093740
 GameObject:
   m_ObjectHideFlags: 0

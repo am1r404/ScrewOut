@@ -3,24 +3,28 @@ using UnityEngine;
 using Zenject;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using Cysharp.Threading.Tasks;
 
 public class LevelLoader
 {
     private const string PlayerPrefsCurrentLevelKey = "CurrentLevelIndex";
 
     public List<GameObject> levelPrefabs;
-    [Inject]
-    private ZenjectSceneLoader _sceneLoader;
-
-    [Inject]
-    private DiContainer _container;
+    private readonly DiContainer _container;
+    private readonly SceneLoader _sceneLoader;
 
     private GameObject currentLevelInstance;
     private int currentLevelIndex = 0;
     public UnityAction OnLevelLoaded;
 
+    public LevelLoader(DiContainer container, SceneLoader sceneLoader)
+    {
+        _container = container;
+        _sceneLoader = sceneLoader;
+    }
+
     [Inject]
-    public void Initialize()
+    public async UniTask Initialize()
     {
         LoadLevelPrefabsFromResources();
 
@@ -48,7 +52,7 @@ public class LevelLoader
         }
     }
 
-    public void LoadLevel(int levelIndex)
+    public async UniTask LoadLevel(int levelIndex)
     {
         if (levelIndex < 0 || levelIndex >= levelPrefabs.Count)
         {
@@ -62,10 +66,10 @@ public class LevelLoader
             currentLevelInstance = null;
         }
 
-        currentLevelInstance = _container.InstantiatePrefab(levelPrefabs[levelIndex]);
+        await _sceneLoader.LoadSceneAsync("Game");
 
+        currentLevelInstance = _container.InstantiatePrefab(levelPrefabs[levelIndex]);
         currentLevelIndex = levelIndex;
-        _sceneLoader.LoadSceneAsync("Game");
 
         OnLevelLoaded?.Invoke();
     }

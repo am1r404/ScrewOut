@@ -213,10 +213,11 @@ public class GameManager : MonoBehaviour
 
         foreach (var panelData in levelData.panels)
         {
+            GameObject prefab = Resources.Load<GameObject>("ColoredPanel" + panelData.panelColor);
             var panel = _container.InstantiatePrefabForComponent<ScrewPanel>(
-                Resources.Load("ColoredPanel"), 
+                prefab, 
                 coloredPanels.position, 
-                Quaternion.identity, 
+                prefab.transform.rotation, 
                 coloredPanels);
 
             panel.transform.localPosition += new Vector3(i * -0.5f, 0, 0);

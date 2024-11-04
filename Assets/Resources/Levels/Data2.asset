@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Data2
   m_EditorClassIdentifier: 
   panels:
-  - panelColor: 0
-    numberOfHoles: 3
-  - panelColor: 1
-    numberOfHoles: 3
   - panelColor: 2
     numberOfHoles: 3
   - panelColor: 3
+    numberOfHoles: 3
+  - panelColor: 4
+    numberOfHoles: 3
+  - panelColor: 0
     numberOfHoles: 3

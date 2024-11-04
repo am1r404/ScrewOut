@@ -3,6 +3,7 @@ public enum ScrewColor
     Green,
     Red,
     Blue,
-    Brown,
+    Yellow,
+    Black,
     BasePanel
 }

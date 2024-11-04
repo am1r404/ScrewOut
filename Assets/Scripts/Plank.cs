@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Plank : MonoBehaviour
 {
-    public List<Screw> screws = new List<Screw>();
-    private bool isFalling = false;
+    public List<Screw> screws = new();
+    private bool isFalling;
 
     void Start()
     {
-        if (screws.Count == 0)
+        if (screws.Count != 0)
         {
-            screws = FindScrewsAttachedToPlank();
             foreach (var screw in screws)
             {
                 if (!screw.attachedPlanks.Contains(this))
@@ -18,6 +18,14 @@ public class Plank : MonoBehaviour
                     screw.attachedPlanks.Add(this);
                 }
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -47,10 +55,5 @@ public class Plank : MonoBehaviour
         transform.parent = null;
 
         Debug.Log($"Plank '{gameObject.name}' is falling!");
-    }
-
-    private List<Screw> FindScrewsAttachedToPlank()
-    {
-        return new List<Screw>();
     }
 }
