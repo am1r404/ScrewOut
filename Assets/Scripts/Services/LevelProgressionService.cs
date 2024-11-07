@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-
 public class LevelProgressionService
 {
     private const string PlayerPrefsCurrentLevelKey = "CurrentLevelIndex";
