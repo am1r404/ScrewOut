@@ -40,6 +40,12 @@ public class LevelLoader
     private void LoadLevelPrefabsFromResources()
     {
         GameObject[] prefabs = Resources.LoadAll<GameObject>("Levels");
+        // Sort prefabs by natural number order
+        Array.Sort(prefabs, (a, b) => {
+            int aNum = int.Parse(a.name.Replace("Level", ""));
+            int bNum = int.Parse(b.name.Replace("Level", ""));
+            return aNum.CompareTo(bNum);
+        });
         levelPrefabs = new List<GameObject>(prefabs);
 
         if (levelPrefabs.Count == 0)
@@ -64,6 +70,7 @@ public class LevelLoader
         {
             GameObject.Destroy(currentLevelInstance);
             currentLevelInstance = null;
+            Debug.Log($"[LevelLoader.LoadLevel] Destroyed previous level instance.");
         }
 
         await _sceneLoader.LoadSceneAsync("Game");
@@ -71,12 +78,25 @@ public class LevelLoader
         currentLevelInstance = _container.InstantiatePrefab(levelPrefabs[levelIndex]);
         currentLevelIndex = levelIndex;
 
+        Debug.Log($"[LevelLoader.LoadLevel] Loaded Level {currentLevelIndex}: {levelPrefabs[levelIndex].name}");
+
         OnLevelLoaded?.Invoke();
+    }
+
+    public void ClearLevel()
+    {
+        if (currentLevelInstance != null)
+        {
+            GameObject.Destroy(currentLevelInstance);
+            currentLevelInstance = null;
+            Debug.Log($"[LevelLoader.ClearLevel] Cleared current level instance.");
+        }
     }
 
     public void LoadCurrentLevel()
     {
-        LoadLevel(currentLevelIndex);
+        LoadLevel(currentLevelIndex).Forget();
+        Debug.Log($"[LevelLoader.LoadCurrentLevel] Loading Current Level {currentLevelIndex}");
     }
 
     public void LoadNextLevel()
@@ -85,7 +105,8 @@ public class LevelLoader
 
         if (nextLevelIndex < levelPrefabs.Count)
         {
-            LoadLevel(nextLevelIndex);
+            LoadLevel(nextLevelIndex).Forget();
+            Debug.Log($"[LevelLoader.LoadNextLevel] Loading Next Level {nextLevelIndex}");
         }
         else
         {

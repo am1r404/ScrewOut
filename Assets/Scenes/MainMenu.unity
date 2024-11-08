@@ -1671,14 +1671,14 @@ MonoBehaviour:
   - roomObject: {fileID: 818492086}
     objectsToShow:
     - {fileID: 1516724155}
-    - {fileID: 464274042}
-    - {fileID: 1800723823}
+    - {fileID: 159648437}
     - {fileID: 2136153214}
     - {fileID: 999025914}
     - {fileID: 1524036455}
-    - {fileID: 159648437}
-    - {fileID: 1769872038}
+    - {fileID: 1800723823}
+    - {fileID: 464274042}
     - {fileID: 1980908439}
+    - {fileID: 1769872038}
     - {fileID: 782509607}
   - roomObject: {fileID: 1872545462}
     objectsToShow:
@@ -3492,14 +3492,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 818492087}
-  - component: {fileID: 818492088}
   m_Layer: 0
   m_Name: Levels1to9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &818492087
 Transform:
   m_ObjectHideFlags: 0
@@ -3514,14 +3513,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1516724156}
-  - {fileID: 464274043}
-  - {fileID: 1800723824}
+  - {fileID: 159648438}
   - {fileID: 2136153215}
   - {fileID: 999025915}
   - {fileID: 1524036456}
-  - {fileID: 159648438}
-  - {fileID: 1769872039}
+  - {fileID: 1800723824}
+  - {fileID: 464274043}
   - {fileID: 1980908440}
+  - {fileID: 1769872039}
   - {fileID: 782509608}
   - {fileID: 584933803}
   - {fileID: 1496498154}
@@ -3531,29 +3530,6 @@ Transform:
   - {fileID: 2104873126}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &818492088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818492086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b435036c41c760408df5d8f186b2d91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 1516724155}
-  - {fileID: 159648437}
-  - {fileID: 464274042}
-  - {fileID: 1800723823}
-  - {fileID: 2136153214}
-  - {fileID: 999025914}
-  - {fileID: 1524036455}
-  - {fileID: 1769872038}
-  - {fileID: 1980908439}
-  - {fileID: 782509607}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -9247,6 +9223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Room_36_Lamp_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570492146512016427, guid: 7dac9fc80708778439035853a49f4266,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

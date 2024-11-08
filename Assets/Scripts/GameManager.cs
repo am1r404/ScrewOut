@@ -232,12 +232,15 @@ public class GameManager : MonoBehaviour
     public void OnLevelCompleted()
     {
         _levelProgressionService.AdvanceToNextLevel();
+        _levelLoader.ClearLevel();
         _sceneLoader.LoadSceneAsync("MainMenu");
     }
 
     private void PlayerLoses()
     {
         gameOver = true;
+        _sceneLoader.LoadSceneAsync("MainMenu");
+        _levelLoader.ClearLevel();
     }
 
     private void HandleLevelLoaded()
